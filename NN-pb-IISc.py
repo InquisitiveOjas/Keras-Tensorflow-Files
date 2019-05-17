@@ -92,5 +92,4 @@ train_writer = tf.summary.FileWriter(LOGDIR)
 train_writer.add_graph(sess.graph)
 
 # To view the architecture in the form of a graph type in anaconda prompt: tensorboard --logdir=C:\Users\ojasr\OneDrive\Desktop\LogDir --host localhost --port 6006
-
-
+# Paste the link obtained on the browser to view the file.
