@@ -89,6 +89,7 @@ with tf.Session() as sess:
         g_in = tf.import_graph_def(graph_def)
 LOGDIR='OneDrive\Desktop\LogDir' #Enter Location
 train_writer = tf.summary.FileWriter(LOGDIR)
+# If it doesn't work type:- train_writer = tf.summary.FileWriter(LOGDIR , sess.graph)
 train_writer.add_graph(sess.graph)
 
 # To view the architecture in the form of a graph type in anaconda prompt: tensorboard --logdir=C:\Users\ojasr\OneDrive\Desktop\LogDir --host localhost --port 6006
