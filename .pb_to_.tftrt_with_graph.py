@@ -17,7 +17,7 @@ frozen_graph_def.ParseFromString(f.read())
 # Parameters:
 output_node_name = "activation_9/Sigmoid"
 workspace_size = 1 << 30
-precision = "FP32"
+precision = "FP32" #Change to FP16 for reduced time
 batch_size = 1
 
 trt_graph = trt.create_inference_graph(
