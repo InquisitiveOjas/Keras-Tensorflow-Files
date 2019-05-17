@@ -1,0 +1,2 @@
+#Code to inference from a pb file and get total run time.
+#FP16 takes lesser time as compared to FP32
