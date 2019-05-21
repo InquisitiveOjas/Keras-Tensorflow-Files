@@ -1,0 +1,25 @@
+After saving the model using:-  saver.save(sess,'./tensorflowModel.ckpt')...
+
+There will be four files:-
+
+1.tensorflowModel.ckpt.meta:  Tenosrflow stores the graph structure separately from the variable values. 
+                              The file .ckpt.meta contains the complete graph. It includes GraphDef, SaverDef, and so on.
+
+2.tensorflowModel.ckpt.data-00000-of-00001: This contains the values of variables(weights, biases, placeholders, gradients, hyper-parameters etc).
+
+3.tensorflowModel.ckpt.index: It is a table where Each key is the name of a tensor and its value is a serialized BundleEntryProto.
+                              serialized BundleEntryProto holds metadata of the tensors. 
+                              Metadata of a tensor may be like: which of the “data” files contains the content of a tensor, the offset into that file, checksum, some auxiliary data, etc.
+
+4.checkpoint:All checkpoint information, like model ckpt file name and path
+
+tensorflowModel.pbtxt:  This holds a network of nodes, each representing one operation, connected to each other as inputs and outputs. 
+                        We will use it for freezing our graph. 
+                        You can open this file and check if some nodes are missing for debugging purpose.
+                        
+Difference between .meta files and .pbtxt files:-
+Well you can say .pbtxt are human readable whereas .meta files are not. 
+But if you keep as_text = false it is no more human readable. 
+Still they are different. 
+.meta files holds ,more than just the structure of the graph like MetaInfoDef , GraphDef SaverDef , CollectionDef . 
+Whereas .pbtxt files holds only the structure of the graph.
