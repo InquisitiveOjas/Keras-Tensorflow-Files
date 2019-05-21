@@ -23,3 +23,5 @@ But if you keep as_text = false it is no more human readable.
 Still they are different. 
 .meta files holds ,more than just the structure of the graph like MetaInfoDef , GraphDef SaverDef , CollectionDef . 
 Whereas .pbtxt files holds only the structure of the graph.
+
+Reference :- https://medium.com/@prasadpal107/saving-freezing-optimizing-for-inference-restoring-of-tensorflow-models-b4146deb21b5
