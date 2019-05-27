@@ -96,3 +96,24 @@ train_writer.add_graph(sess.graph)
 # Paste the link obtained on the browser to view the file.
 
 # If working with a pb graph generated from tensorrt use : import tensorflow.contrib.tensorrt as trt
+
+#To get the names of the nodes:-
+import tensorflow as tf
+
+def printTensors(pb_file):
+
+    # read pb into graph_def
+    with tf.gfile.GFile(pb_file, "rb") as f:
+        graph_def = tf.GraphDef()
+        graph_def.ParseFromString(f.read())
+
+    # import graph_def
+    with tf.Graph().as_default() as graph:
+        tf.import_graph_def(graph_def)
+
+    # print operations
+    for op in graph.get_operations():
+        print(op.name)
+
+
+printTensors("Downloads/frozen_model_Sample_model.pb")
